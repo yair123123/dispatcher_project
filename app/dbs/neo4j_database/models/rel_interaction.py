@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Optional
 
 @dataclass
@@ -8,5 +9,4 @@ class RelInteraction:
     signal_strength_dbm : int
     distance_meters : float
     duration_seconds : int
-    timestamp : str
-    
+    timestamp : datetime
