@@ -106,15 +106,13 @@ MATCH path = shortestPath((start)-[:CONNECTED*]->(end))
 WHERE ALL(r IN relationships(path) WHERE r.method = 'Bluetooth')
 WITH path, length(path) as pathLength
 ORDER BY pathLength DESC
-RETURN length(path),path
+RETURN length(path) as len ,path
         """
         results = session.run(query)
         return [
             {
-                "startDevice": record["startDevice"],
-                "endDevice": record["endDevice"],
-                "pathLength": record["pathLength"],
-                "devices": [dict(device) for device in record["devices"]],
+                "len": record["len"],
+                "path": [dict(device) for device in record["path"]],
             }
             for record in results
         ]
