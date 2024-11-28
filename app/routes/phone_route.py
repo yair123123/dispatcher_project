@@ -38,7 +38,7 @@ def count_connected_devices(device_id):
 
 
 @phone_tracker_blueprint.route('/find_connection/<string:device_a_id>/<string:device_b_id>', methods=['GET'])
-def find_connection(device_a_id, device_b_id):
+def find_connection(device_a_id, device_b_id) :
     return jsonify(find_connection_between_two_devices(device_a_id, device_b_id))
 
 
