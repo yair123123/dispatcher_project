@@ -123,7 +123,7 @@ def get_devices_with_strong_signal():
         query = """
         MATCH path = (d:Device)-[r:CONNECTED]->(d2:Device)
         WHERE r.signal_strength_dbm >= -60
-        return d 
+        return d as device_with_strong_signal
         """
         return session.run(query).data()
 
