@@ -167,7 +167,7 @@ def get_recent_connection_by_device_id(device_id: str):
         query = """
         MATCH (d:Device)-[r:CONNECTED]->(other:Device)
         WHERE d.device_id = $device_id
-        RETURN  other
+        RETURN  r,other
         ORDER BY r.timestamp ASC
         """
         params = {
