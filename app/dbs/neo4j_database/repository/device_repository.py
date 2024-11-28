@@ -99,12 +99,14 @@ def relation_devices(device_a_id: int, device_b_id: int, interaction: RelInterac
 def get_interaction_with_bluetooth():
     with driver.session() as session:
         query = """
-MATCH path = (d:Device)-[:CONNECTED {method: "Bluetooth"}]->(d2:Device)
-WHERE NOT d = d2
-return d AS startDevice, 
-d2 AS endDevice, 
-length(path) AS pathLength, 
-nodes(path) AS devices
+MATCH (start:Device)
+MATCH (end:Device)
+WHERE start <> end
+MATCH path = shortestPath((start)-[:CONNECTED*]->(end))
+WHERE ALL(r IN relationships(path) WHERE r.method = 'Bluetooth')
+WITH path, length(path) as pathLength
+ORDER BY pathLength DESC
+RETURN length(path),path
         """
         results = session.run(query)
         return [
