@@ -173,6 +173,4 @@ def get_recent_connection_by_device_id(device_id: str):
         params = {
             "device_id": device_id
         }
-        result = session.run(query, params).data()
-
-        return result
+        return session.run(query, params).single().get("r")

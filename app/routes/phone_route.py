@@ -45,4 +45,4 @@ def find_connection(device_a_id, device_b_id) :
 
 @phone_tracker_blueprint.route('/recent_connections/<string:device_id>', methods=['GET'])
 def find_recent_connection_by_device_id(device_id: str):
-    return jsonify(get_recent_connection_by_device_id(device_id))
+    return jsonify(**get_recent_connection_by_device_id(device_id))
