@@ -1,0 +1,40 @@
+{
+  'devices': [
+    {
+      'id': 'c6550985-7b1f-48fb-a915-0dd04508e252',
+      'name': 'Kevin',
+      'brand': 'Clarke-Cross',
+      'model': 'Available But',
+      'os': 'SkillOS 8.5',
+      'location': {
+        'latitude': -73.3931355,
+        'longitude': 8.186774,
+        'altitude_meters': 3031,
+        'accuracy_meters': 50
+      }
+    },
+    {
+      'id': '9cdbd2fb-22e6-4de2-b306-35f124741b81',
+      'name': 'Robert',
+      'brand': 'James, Wilson and Rodriguez',
+      'model': 'Section Son',
+      'os': 'BehindOS 1.2',
+      'location': {
+        'latitude': 2.009923,
+        'longitude': -105.999006,
+        'altitude_meters': 264,
+        'accuracy_meters': 18
+      }
+    }
+  ],
+  "interaction": {
+    'from_device': 'c6550985-7b1f-48fb-a915-0dd04508e252',
+    'to_device': '9cdbd2fb-22e6-4de2-b306-35f124741b81',
+    'method': 'NFC',
+    'bluetooth_version': '5.3',
+    'signal_strength_dbm': -35,
+    'distance_meters': 11.8,
+    'duration_seconds': 82,
+    'timestamp': '2001-02-14T06:30:59'
+  }
+}
